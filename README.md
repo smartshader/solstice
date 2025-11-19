@@ -90,7 +90,7 @@ colorscheme solstice
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/solstice.git
+   git clone https://github.com/smartshader/solstice.git
    ```
 
 2. Copy the files to your Vim/Neovim configuration directory:
