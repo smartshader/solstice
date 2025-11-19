@@ -45,7 +45,7 @@ syntax highlighting, UI styling, and plugin integration.
 
 ```lua
 {
-  'yourusername/solstice',
+  'smartshader/solstice',
   lazy = false,
   priority = 1000,
   config = function()
@@ -61,7 +61,7 @@ syntax highlighting, UI styling, and plugin integration.
 
 ```lua
 use {
-  'yourusername/solstice',
+  'smartshader/solstice',
   config = function()
     require('solstice').setup({
       -- your configuration here (optional)
@@ -74,7 +74,7 @@ use {
 ### [vim-plug](https://github.com/junegunn/vim-plug)
 
 ```vim
-Plug 'yourusername/solstice'
+Plug 'smartshader/solstice'
 
 " In your init.vim or .vimrc
 lua << EOF
@@ -325,7 +325,7 @@ Contributions are welcome! Here's how you can help:
 If you encounter any problems or have suggestions:
 
 1. Check if the issue already exists in the
-   [issue tracker](https://github.com/yourusername/solstice/issues)
+   [issue tracker](https://github.com/smartshader/solstice/issues)
 2. If not, create a new issue with:
    - A clear description of the problem
    - Steps to reproduce
@@ -357,7 +357,7 @@ If you have suggestions for color improvements:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/solstice.git
+   git clone https://github.com/smartshader/solstice.git
    cd solstice
    ```
 
@@ -391,13 +391,6 @@ MIT License - see [LICENSE](LICENSE) file for details
 - Inspired by popular themes like One Dark, Gruvbox, and Nord
 - Built with guidance from the Vim/Neovim community
 - Color palette designed with accessibility in mind
-
-## Related Projects
-
-- [lualine-solstice](https://github.com/yourusername/lualine-solstice) -
-  Solstice theme for lualine.nvim
-- [tmux-solstice](https://github.com/yourusername/tmux-solstice) - Matching tmux
-  theme
 
 ---
 
