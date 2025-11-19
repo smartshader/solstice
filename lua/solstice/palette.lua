@@ -29,7 +29,7 @@ function M.get_colors()
         fg3 = color('#E5E4B5', 187), -- Even dimmer (for comments)
 
         -- Syntax colors - Primary
-        red = color('#F095F7', 213),    -- Keywords, errors, deletion
+        red = color('#DD7CDB', 176),    -- Keywords, errors, deletion
         green = color('#BAEC7E', 150),  -- Strings, additions
         blue = color('#9ABBDD', 110),   -- Functions, identifiers
         yellow = color('#e5c07b', 180), -- Constants, warnings
@@ -38,7 +38,7 @@ function M.get_colors()
         cyan = color('#56b6c2', 73),    -- Operators, special identifiers
 
         -- Syntax colors - Variants
-        red_bright = color('#ffa9ff', 219),
+        red_bright = color('#f0a3ee', 213),
         green_bright = color('#c9ff8f', 192),
         blue_bright = color('#aed4ff', 153),
         yellow_bright = color('#f0c674', 222),
@@ -57,7 +57,7 @@ function M.get_colors()
         accent_cyan = color('#56b6c2', 73),
 
         -- Semantic colors
-        error = color('#F095F7', 213),   -- Error messages
+        error = color('#DD7CDB', 176),   -- Error messages
         warning = color('#e5c07b', 180), -- Warning messages
         info = color('#9ABBDD', 110),    -- Info messages
         hint = color('#56b6c2', 73),     -- Hint messages
@@ -76,7 +76,7 @@ function M.get_colors()
         diff_add_bg = color('#2c3a2e', 22),    -- Added background
         diff_change = color('#e5c07b', 180),   -- Changed lines
         diff_change_bg = color('#3a3a2e', 58), -- Changed background
-        diff_delete = color('#F095F7', 213),   -- Deleted lines
+        diff_delete = color('#DD7CDB', 176),   -- Deleted lines
         diff_delete_bg = color('#3a2c2e', 52), -- Deleted background
         diff_text = color('#9ABBDD', 110),     -- Changed text
         diff_text_bg = color('#2e3a4a', 17),   -- Changed text background
@@ -84,7 +84,7 @@ function M.get_colors()
         -- Git colors
         git_add = color('#BAEC7E', 150),    -- Git additions
         git_change = color('#e5c07b', 180), -- Git modifications
-        git_delete = color('#F095F7', 213), -- Git deletions
+        git_delete = color('#DD7CDB', 176), -- Git deletions
         git_text = color('#9ABBDD', 110),   -- Git text changes
 
         -- Border colors
@@ -96,7 +96,7 @@ function M.get_colors()
 
         -- Terminal colors (for terminal emulator within vim/neovim)
         terminal_black = color('#050505', 232),
-        terminal_red = color('#F095F7', 213),
+        terminal_red = color('#DD7CDB', 176),
         terminal_green = color('#BAEC7E', 150),
         terminal_yellow = color('#e5c07b', 180),
         terminal_blue = color('#9ABBDD', 110),
@@ -104,7 +104,7 @@ function M.get_colors()
         terminal_cyan = color('#56b6c2', 73),
         terminal_white = color('#DADADA', 253),
         terminal_bright_black = color('#5c6370', 241),
-        terminal_bright_red = color('#ffa9ff', 219),
+        terminal_bright_red = color('#f0a3ee', 213),
         terminal_bright_green = color('#c9ff8f', 192),
         terminal_bright_yellow = color('#f0c674', 222),
         terminal_bright_blue = color('#aed4ff', 153),

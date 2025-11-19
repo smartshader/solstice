@@ -23,7 +23,7 @@ syntax highlighting, UI styling, and plugin integration.
 
 | Color  | Hex       | Usage                          |
 | ------ | --------- | ------------------------------ |
-| Pink   | `#F095F7` | Keywords, errors, deletion     |
+| Purple | `#DD7CDB` | Keywords, errors, deletion     |
 | Green  | `#BAEC7E` | Strings, additions             |
 | Blue   | `#9ABBDD` | Functions, identifiers         |
 | Yellow | `#e5c07b` | Constants, warnings            |
