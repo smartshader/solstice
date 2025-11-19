@@ -23,21 +23,21 @@ syntax highlighting, UI styling, and plugin integration.
 
 | Color  | Hex       | Usage                          |
 | ------ | --------- | ------------------------------ |
-| Red    | `#e06c75` | Keywords, errors, deletion     |
-| Green  | `#98c379` | Strings, additions             |
-| Blue   | `#61afef` | Functions, identifiers         |
+| Pink   | `#F095F7` | Keywords, errors, deletion     |
+| Green  | `#BAEC7E` | Strings, additions             |
+| Blue   | `#9ABBDD` | Functions, identifiers         |
 | Yellow | `#e5c07b` | Constants, warnings            |
 | Orange | `#d19a66` | Numbers, special               |
-| Purple | `#c678dd` | Types, keywords                |
+| Coral  | `#EA8675` | Types, classes, structs        |
 | Cyan   | `#56b6c2` | Operators, special identifiers |
 
 ### Base Colors
 
-| Color      | Hex       | Usage               |
-| ---------- | --------- | ------------------- |
-| Background | `#1a1d23` | Main background     |
-| Foreground | `#abb2bf` | Main text           |
-| Gray       | `#5c6370` | Comments, subtle UI |
+| Color      | Hex       | Usage                     |
+| ---------- | --------- | ------------------------- |
+| Background | `#050505` | Main background           |
+| Foreground | `#DADADA` | Main text, variable names |
+| Gray       | `#E5E4B5` | Comments, subtle UI       |
 
 ## Installation
 
