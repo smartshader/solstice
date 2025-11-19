@@ -189,23 +189,23 @@ function M.set_highlight(group, colors)
 
     -- Use Neovim's native API if available (0.7+)
     -- This is the preferred method for Neovim
+    -- Note: nvim_set_hl always requires GUI colors (hex values), not cterm numbers
     if M.is_neovim() and M.has_nvim_version(0, 7, 0) then
         local hl_def = {}
-        local color_mode = M.get_color_mode()
 
-        -- Set foreground color
+        -- Set foreground color (always use 'gui' mode for nvim_set_hl)
         if colors.fg then
-            hl_def.fg = M.get_color_value(colors.fg, color_mode)
+            hl_def.fg = M.get_color_value(colors.fg, 'gui')
         end
 
-        -- Set background color
+        -- Set background color (always use 'gui' mode for nvim_set_hl)
         if colors.bg then
-            hl_def.bg = M.get_color_value(colors.bg, color_mode)
+            hl_def.bg = M.get_color_value(colors.bg, 'gui')
         end
 
         -- Set special color (for underline, undercurl)
         if colors.sp then
-            hl_def.sp = M.get_color_value(colors.sp, color_mode)
+            hl_def.sp = M.get_color_value(colors.sp, 'gui')
         end
 
         -- Set text attributes
@@ -220,35 +220,27 @@ function M.set_highlight(group, colors)
     else
         -- Fallback to vim.cmd for Vim and older Neovim versions
         -- This method works in both Vim 8.2+ with Lua and older Neovim
+        -- We set both GUI and cterm colors for maximum compatibility
         local cmd = 'highlight ' .. group
-        local color_mode = M.get_color_mode()
 
-        -- Add foreground color
+        -- Add foreground color (set both gui and cterm)
         if colors.fg then
-            local fg_value = M.get_color_value(colors.fg, color_mode)
-            if color_mode == 'gui' then
-                cmd = cmd .. ' guifg=' .. fg_value
-            else
-                cmd = cmd .. ' ctermfg=' .. fg_value
-            end
+            local gui_fg = M.get_color_value(colors.fg, 'gui')
+            local cterm_fg = M.get_color_value(colors.fg, 'cterm256')
+            cmd = cmd .. ' guifg=' .. gui_fg .. ' ctermfg=' .. cterm_fg
         end
 
-        -- Add background color
+        -- Add background color (set both gui and cterm)
         if colors.bg then
-            local bg_value = M.get_color_value(colors.bg, color_mode)
-            if color_mode == 'gui' then
-                cmd = cmd .. ' guibg=' .. bg_value
-            else
-                cmd = cmd .. ' ctermbg=' .. bg_value
-            end
+            local gui_bg = M.get_color_value(colors.bg, 'gui')
+            local cterm_bg = M.get_color_value(colors.bg, 'cterm256')
+            cmd = cmd .. ' guibg=' .. gui_bg .. ' ctermbg=' .. cterm_bg
         end
 
-        -- Add special color
+        -- Add special color (GUI only)
         if colors.sp then
-            local sp_value = M.get_color_value(colors.sp, color_mode)
-            if color_mode == 'gui' then
-                cmd = cmd .. ' guisp=' .. sp_value
-            end
+            local gui_sp = M.get_color_value(colors.sp, 'gui')
+            cmd = cmd .. ' guisp=' .. gui_sp
         end
 
         -- Add text attributes
@@ -262,11 +254,7 @@ function M.set_highlight(group, colors)
 
         if #attrs > 0 then
             local attr_str = table.concat(attrs, ',')
-            if color_mode == 'gui' then
-                cmd = cmd .. ' gui=' .. attr_str
-            else
-                cmd = cmd .. ' cterm=' .. attr_str
-            end
+            cmd = cmd .. ' gui=' .. attr_str .. ' cterm=' .. attr_str
         end
 
         vim.cmd(cmd)
