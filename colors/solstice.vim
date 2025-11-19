@@ -1,28 +1,24 @@
 " Solstice colorscheme entry point
 
-" Check if Lua is available
-if !has('lua')
-  echohl ErrorMsg
-  echom 'Solstice colorscheme requires Lua support. Please use Vim 8.2+ with +lua or Neovim 0.5+.'
-  echohl None
-  finish
-endif
-
-" Check Vim version if not Neovim
-if !has('nvim')
+" Check Neovim version (Neovim has native Lua support)
+if has('nvim')
+  if !has('nvim-0.5')
+    echohl ErrorMsg
+    echom 'Solstice colorscheme requires Neovim 0.5 or later.'
+    echohl None
+    finish
+  endif
+" Check Vim version and Lua support
+elseif has('vim')
   if v:version < 802
     echohl ErrorMsg
     echom 'Solstice colorscheme requires Vim 8.2 or later. Current version: ' . v:version
     echohl None
     finish
   endif
-endif
-
-" Check Neovim version
-if has('nvim')
-  if !has('nvim-0.5')
+  if !has('lua')
     echohl ErrorMsg
-    echom 'Solstice colorscheme requires Neovim 0.5 or later.'
+    echom 'Solstice colorscheme requires Lua support. Please compile Vim with +lua feature.'
     echohl None
     finish
   endif
