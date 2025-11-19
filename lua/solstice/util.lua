@@ -143,9 +143,14 @@ function M.get_color_mode()
         return 'gui'
     end
 
-    -- Check terminal color count
-    local t_Co = vim.o.t_Co
-    if t_Co >= 256 then
+    -- Check terminal color count (only available in Vim, not Neovim)
+    if M.is_vim() then
+        local t_Co = vim.o.t_Co
+        if t_Co and t_Co >= 256 then
+            return 'cterm256'
+        end
+    else
+        -- Neovim: if termguicolors is off, assume 256-color support
         return 'cterm256'
     end
 
